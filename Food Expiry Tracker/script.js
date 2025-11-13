@@ -61,12 +61,57 @@ if (diffDays > 0){
 
 }
 
+document.getElementById("checkBtn").addEventListener("click", showResults);
+function showResults(){
+    let names = food.map(item => item.name);
+    let uniqueNames = [...new Set(names)];
+    let summary = [];
 
-let names = food.map(item => item.name);
+    for (let i = 0; i < uniqueNames.length; i++) {
+        let item = food.find( f => f.name === uniqueNames[i]);
+        summary.push({
+            name: uniqueNames[i],
+            status: checkExpiry(item)
+            
+        });
+    
+    }
+    let output = document.getElementById("output");
+    output.innerHTML="";
 
-let uniqueNames = [...new Set(names)];
-console.log(uniqueNames)
-for (let i = 0; i < uniqueNames.length; i ++) {
-  let item = food.find(f => f.mame === uniqueNames[i]);
-console.log(checkExpiry([item]));
+    for (let i = 0; i < summary.length; i++){
+        let itemDiv = document.createElement("div");
+        itemDiv.textContent = summary[i].status;
+     
+        if (summary[i].status.includes("days left")){
+            itemDiv.classList.add("fresh");
+        }
+                if (summary[i].status.includes("expired")){
+            itemDiv.classList.add("expired");
+        }
+                if (summary[i].status.includes("today")){
+            itemDiv.classList.add("today");
+        }
+                output.appendChild(itemDiv);
+
 }
+}
+
+// let names = food.map(item => item.name);
+
+// let uniqueNames = [...new Set(names)];
+// let summary = [];
+
+// console.log(uniqueNames)
+// for (let i = 0; i < uniqueNames.length; i ++) {
+//   let item = food.find(f => f.name === uniqueNames[i]);
+// console.log(checkExpiry(item));
+
+
+// summary.push({
+//     name: uniqueNames[i],
+//     status: checkExpiry(item)
+// });
+
+// }
+// console.log(JSON.stringify(summary, null , 2))

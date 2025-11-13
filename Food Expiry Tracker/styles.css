@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #fafafa;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* Container for each result */
+#output div {
+    max-width: 600px;
+    margin: 12px auto;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    font-size: 18px;
+    color: white;
+}
+
+/* Color Coding */
+.fresh {
+    background: #2ecc71; /* green */
+}
+
+.expired {
+    background: #e74c3c; /* red */
+}
+
+.today {
+    background: #f39c12; /* orange */
+}
+
+/* Button styling */
+#checkBtn {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    background: #3498db;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#checkBtn:hover {
+    background: #2980b9;
+}
