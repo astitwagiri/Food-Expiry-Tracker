@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #111;
+  color: #00ffcc;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  font-family: 'https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap';
+}
+#clock{
+  
+}
+
+.clock-container {
+  text-align: center;
+  padding: 30px 60px;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.5);
+}
+.flip-container {
+  perspective: 1000px;
+  color: #000;
+}
+
+#clock {
+  font-size: 3rem;
+  letter-spacing: 3px;
+}
